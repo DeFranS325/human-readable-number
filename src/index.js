@@ -10,13 +10,8 @@ module.exports = function toReadable (number) {
           if (number < 100){
                result = (number%10 == 0) ? tens[number/10 - 2] : tens[Math.trunc(number/10 - 2)] + ' ' + units[number%10];
           }
-          else{
-               if (number%100 == 0) result = units[number/100] + hundreds;
-               else {
-                    let h = Math.trunc(number/100);
-                    result = units[h] + hundreds + ' ' + toReadable(number%100);
-               }
-          }
+          else
+               result = (number%100 == 0) ? units[number/100] + hundreds : result = units[Math.trunc(number/100)] + hundreds + ' ' + toReadable(number%100);
           return result;
      }
 }
