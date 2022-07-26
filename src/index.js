@@ -11,7 +11,7 @@ module.exports = function toReadable (number) {
                result = (number%10 == 0) ? tens[number/10 - 2] : tens[Math.trunc(number/10 - 2)] + ' ' + units[number%10];
           }
           else{
-               if (number%100 == 0) result = units[number/100пше ] + hundreds;
+               if (number%100 == 0) result = units[number/100] + hundreds;
                else {
                     let h = Math.trunc(number/100);
                     result = units[h] + hundreds + ' ' + toReadable(number%100);
